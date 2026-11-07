@@ -36,6 +36,51 @@
     @media(max-width:420px){.main-nav a{padding-inline:13px}.main-nav{gap:2px}.brand span{font-size:11px}.price-card{padding:25px 22px}.price-card h3{font-size:26px}.price strong{font-size:42px}.price p>span{display:block;margin-left:0}.plan-features li{font-size:14px}.pricing-intro>p{font-size:16px}.tools-strip{gap:8px;font-size:11px}}
     @media print{.pricing-grid{grid-template-columns:1fr}.price-card,.price-card.combined{background:white;color:#111;border-color:#bbb;break-inside:avoid}.price strong,.plan-features li,.working-faq summary{color:#111}.plan-scope,.plan-summary,.price p>span,.price>span,.combined .plan-category{color:#444}.plan-link{display:none}.pricing{padding-block:20px}}
   </style>
+
+  <style id="portfolio-effects">
+    :root{--ease-out:cubic-bezier(.22,1,.36,1);--reading-progress:0}
+    body{isolation:isolate;position:relative}
+    body:before{position:fixed;inset:-8% -8% auto;width:116%;height:110vh;z-index:-1;background:radial-gradient(ellipse at 46% 15%,#b6b6cc1c,transparent 48%),radial-gradient(ellipse at 12% 58%,#8b9b9310,transparent 46%),radial-gradient(ellipse at 88% 70%,#a1a0bd0f,transparent 40%);animation:ambient-drift 18s ease-in-out infinite alternate;transform-origin:center;pointer-events:none}
+    body:after{content:'';position:fixed;inset:0;z-index:60;opacity:.025;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.84' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' opacity='.8' filter='url(%23n)'/%3E%3C/svg%3E")}
+    .reading-progress{position:fixed;top:0;left:0;width:100%;height:2px;z-index:75;pointer-events:none;transform:scaleX(var(--reading-progress));transform-origin:left;background:linear-gradient(90deg,#9fafa0,#e6efe3 70%,#fff);box-shadow:0 0 10px #dcead744;opacity:.8}
+    .site-header{background:linear-gradient(180deg,#111112ba,#11111255);border-bottom-color:transparent;backdrop-filter:blur(20px) saturate(135%);-webkit-backdrop-filter:blur(20px) saturate(135%);transition:background .35s,border-color .35s,box-shadow .35s}
+    .has-scrolled .site-header{background:linear-gradient(180deg,#111112e8,#111112b8);border-bottom-color:#ffffff0c;box-shadow:0 9px 30px #00000012}
+    .main-nav{position:relative;isolation:isolate;background:linear-gradient(145deg,#ffffff15,#ffffff08 65%);border-color:#ffffff29;box-shadow:inset 0 1px 0 #ffffff12,inset 0 -1px 0 #0004,0 8px 35px #0003;backdrop-filter:blur(22px) saturate(150%);-webkit-backdrop-filter:blur(22px) saturate(150%)}
+    .main-nav a{position:relative;z-index:2;transition:color .22s,background .22s;text-shadow:0 0 12px transparent}
+    .nav-enhanced a:hover,.nav-enhanced a[aria-current="location"]{background:transparent;text-shadow:0 0 14px #ffffff1c}
+    .nav-indicator{position:absolute;top:5px;left:0;height:calc(100% - 10px);width:var(--nav-width,0px);transform:translateX(var(--nav-left,0px));border-radius:40px;pointer-events:none;z-index:1;background:linear-gradient(135deg,#ffffff1f,#ffffff0b);border:1px solid #ffffff0d;box-shadow:inset 0 1px 0 #ffffff12,0 5px 15px #0000000a;transition:transform .42s var(--ease-out),width .42s var(--ease-out),opacity .25s;opacity:0}
+    .nav-enhanced .nav-indicator{opacity:1}.nav-indicator:before{content:'';position:absolute;left:calc(50% - 10px);top:-7px;width:20px;height:2px;border-radius:4px;background:#f6f5ff;box-shadow:0 0 9px 2px #e8e5ff5c,0 0 23px 5px #e8e5ff22}
+    .frame,.project,.price-card,.contact{position:relative;isolation:isolate;--light-x:50%;--light-y:0%;transition:transform .38s var(--ease-out),border-color .35s,box-shadow .35s,background .35s}
+    .frame{border-color:#ffffff42;background:linear-gradient(145deg,#4b4b541f,#18181be8 55%,#161619db);box-shadow:0 0 0 7px #ffffff04,0 0 0 8px #ffffff10,inset 0 1px 0 #ffffff36,inset 0 -1px 0 #ffffff05,0 25px 75px #0004;backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px)}
+    .frame:before,.project:before,.price-card:before,.contact:before{content:'';position:absolute;inset:0;border-radius:inherit;z-index:-1;pointer-events:none;background:radial-gradient(580px circle at var(--light-x) var(--light-y),#ffffff13,transparent 68%);opacity:.8;transition:opacity .4s}
+    .frame:after,.project:after,.price-card:after,.contact:after{content:'';position:absolute;top:0;left:7%;right:7%;height:1px;z-index:3;pointer-events:none;background:linear-gradient(90deg,transparent,#ffffff70,transparent);opacity:.65;transition:opacity .35s}
+    .window-bar{background:linear-gradient(108deg,#72727f66,#b1b1ba69 44%,#77778155 80%,#51515d66);border-bottom-color:#ffffff20;box-shadow:inset 0 1px 0 #ffffff38,0 8px 22px #0000000a;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+    .window-dots i{box-shadow:0 0 7px #ff716b77,0 0 13px #ff716b22}.window-dots i:nth-child(2){box-shadow:0 0 7px #edc35777,0 0 13px #edc35722}.window-dots i:nth-child(3){box-shadow:0 0 7px #87bd7177,0 0 13px #87bd7122}
+    .hero h1{text-shadow:0 0 30px #f1efff12}.hero h1 em{background-image:linear-gradient(135deg,#ffffff 12%,#e8e7f0 48%,#b2b1c3 85%,#ededf5);filter:drop-shadow(0 0 11px #dbd8ff16)}.hero-line{display:block}
+    .hero .frame{animation:window-arrive .95s var(--ease-out) both}.hero-line{animation:text-arrive .9s var(--ease-out) both;animation-delay:.12s}.hero-line:nth-child(2){animation-delay:.24s}.hero-kicker{animation:content-arrive .7s var(--ease-out) .08s both}.hero-bottom{animation:content-arrive .9s var(--ease-out) .34s both}.hero-scroll{animation:content-arrive .8s var(--ease-out) .46s both}.hero-scroll svg{animation:scroll-nudge 2.2s ease-in-out 1.6s 3}
+    .project{background:linear-gradient(145deg,#ffffff0d,#ffffff05),#1b1b1ee0;border-color:#ffffff29;box-shadow:0 0 0 6px #ffffff06,inset 0 1px 0 #ffffff09,0 14px 45px #0003;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+    .price-card{background:linear-gradient(145deg,#ffffff0c,#ffffff02),#1c1c20e8;border-color:#ffffff29;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:inset 0 1px 0 #ffffff09,0 12px 30px #00000015}
+    .price-card.combined{background:linear-gradient(140deg,#c7efb10b,#ffffff06),#1d221ee8;border-color:#c7efb162}
+    .contact{background:linear-gradient(130deg,#ffffff0b,#ffffff02),#1b1b20da;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);box-shadow:0 0 0 6px #ffffff03,inset 0 1px 0 #ffffff13,0 20px 60px #0002}
+    .sample{transition:transform .7s var(--ease-out),box-shadow .7s var(--ease-out);transform-origin:center;box-shadow:0 12px 24px #00000015}
+    .button{position:relative;overflow:hidden;isolation:isolate;box-shadow:inset 0 1px 0 #ffffff40,0 4px 12px #00000020;transition:transform .25s var(--ease-out),background .25s,border-color .25s,box-shadow .25s}
+    .button:before{content:'';position:absolute;inset:-35% auto -35% -60%;width:38%;pointer-events:none;background:linear-gradient(90deg,transparent,#ffffff65,transparent);transform:skewX(-22deg) translateX(0);opacity:0;transition:transform .7s var(--ease-out),opacity .2s}
+    .button.secondary{background:linear-gradient(120deg,#ffffff0c,#ffffff04);border-color:#ffffff30;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+    .button svg,.button>span[aria-hidden],.header-contact svg,.site-footer a svg{transition:transform .3s var(--ease-out)}.button:active{transform:translateY(0) scale(.985)}
+    .header-contact{transition:color .25s;text-shadow:0 0 15px transparent}.about-mark{transition:transform .5s var(--ease-out),box-shadow .5s,border-color .5s;box-shadow:inset 0 1px 0 #fff3,0 12px 35px #0003}.about-tools span,.tools-strip strong{transition:transform .3s var(--ease-out),color .3s,border-color .3s,background .3s}
+    .service-row{transition:background .3s,border-color .3s}.service-row h3{transition:color .3s,transform .4s var(--ease-out)}.service-number{transition:color .3s}.working-faq summary{transition:color .25s}.working-faq summary:after{content:'+';transition:transform .3s var(--ease-out),color .25s}.working-faq details[open] summary:after{content:'+';transform:rotate(45deg);color:var(--accent)}.working-faq details[open] summary{color:#e6f0e1}
+    .motion-reveal{transition:opacity .7s var(--ease-out) var(--reveal-delay,0ms),translate .7s var(--ease-out) var(--reveal-delay,0ms),transform .38s var(--ease-out),border-color .35s,box-shadow .35s,background .35s}
+    .motion-reveal.reveal-pending{opacity:0;translate:0 24px}.motion-reveal.is-visible,.motion-reveal:focus-within{opacity:1;translate:0 0}
+    .footer-actions{display:flex;align-items:center;gap:22px}.motion-toggle{background:transparent;padding:6px 0;color:var(--muted);font-size:12px;line-height:1.5;display:inline-flex;align-items:center;gap:7px;min-height:36px}.motion-toggle:hover{color:white}.motion-toggle:before{content:'Ⅱ';font-size:11px}.motion-toggle[aria-pressed="true"]:before{content:'▷';font-size:14px}.motion-toggle:disabled{cursor:default;opacity:.75}.motion-toggle:disabled:before{content:'·'}
+    @supports (interpolate-size:allow-keywords){.working-faq details,.email-helper{interpolate-size:allow-keywords}.working-faq details::details-content,.email-helper::details-content{block-size:0;opacity:0;overflow:clip;transition:block-size .35s var(--ease-out),opacity .25s,content-visibility .35s allow-discrete}.working-faq details[open]::details-content,.email-helper[open]::details-content{block-size:auto;opacity:1}}
+    @media(hover:hover) and (pointer:fine){.frame:hover{border-color:#ffffff63;box-shadow:0 0 0 7px #ffffff04,0 0 0 8px #ffffff15,inset 0 1px 0 #ffffff50,0 30px 85px #0005}.project:hover{transform:perspective(1400px) rotateX(var(--tilt-x,0deg)) rotateY(var(--tilt-y,0deg)) translateY(-5px);border-color:#ffffff58;box-shadow:0 0 0 6px #ffffff09,0 20px 60px #0005}.project:hover .sample{transform:scale(1.012);box-shadow:0 16px 30px #0003}.price-card:hover{transform:translateY(-6px);border-color:#ffffff62;box-shadow:inset 0 1px 0 #ffffff20,0 22px 42px #0004}.price-card.combined:hover{border-color:#d4ebc9aa;box-shadow:0 18px 42px #0004,0 0 25px #c7efb107}.contact:hover{border-color:#ffffff55}.frame:hover:after,.project:hover:after,.price-card:hover:after,.contact:hover:after{opacity:1}.frame:hover:before,.project:hover:before,.price-card:hover:before,.contact:hover:before{opacity:1}.button:hover{transform:translateY(-3px);box-shadow:inset 0 1px 0 #fff8,0 10px 24px #0003}.button:hover:before{opacity:.65;transform:skewX(-22deg) translateX(500%)}.button:hover svg,.button:hover>span[aria-hidden]{transform:translateX(3px)}.header-contact:hover svg,.site-footer a:hover svg{transform:translate(2px,-2px)}.about-mark:hover{transform:rotate(-5deg) translateY(-3px);border-color:#9999a6;box-shadow:inset 0 1px 0 #fff5,0 18px 40px #0005}.about-tools span:hover{color:#fff;border-color:#777785;background:#ffffff08;transform:translateY(-2px)}.tools-strip strong:hover{color:white;transform:translateY(-2px)}.service-row:hover{background:linear-gradient(90deg,#ffffff06,transparent);border-top-color:#6d6d79}.service-row:hover h3{color:#fff;transform:translateX(4px)}.service-row:hover .service-number{color:var(--accent)}.working-faq summary:hover{color:var(--accent)}}
+    @keyframes window-arrive{from{opacity:0;transform:translateY(22px) scale(.985)}to{opacity:1;transform:none}}@keyframes text-arrive{from{opacity:0;transform:translateY(14px);filter:blur(3px)}to{opacity:1;transform:none;filter:blur(0)}}@keyframes content-arrive{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}@keyframes scroll-nudge{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}@keyframes ambient-drift{from{transform:translate3d(-1%,-1%,0) scale(1)}to{transform:translate3d(2%,1%,0) scale(1.04)}}
+    .motion-paused *,.motion-paused *:before,.motion-paused *:after{animation:none!important;transition:none!important}.motion-paused .motion-reveal{opacity:1!important;translate:0 0!important}.motion-paused .frame,.motion-paused .project,.motion-paused .price-card,.motion-paused .button,.motion-paused .sample,.motion-paused .about-mark,.motion-paused .hero-line,.motion-paused .hero-bottom,.motion-paused .hero-kicker,.motion-paused .hero-scroll,.motion-paused .hero-scroll svg,.motion-paused .service-row h3,.motion-paused .tools-strip strong,.motion-paused .about-tools span{transform:none!important}.motion-paused body:before{transform:none}.motion-paused .hero-line{filter:none}.motion-paused .button:before{display:none}html.motion-paused{scroll-behavior:auto}
+    @media(max-width:760px){body:before{animation:none}.nav-indicator{top:4px;height:calc(100% - 8px)}.nav-indicator:before{top:-6px;width:16px;left:calc(50% - 8px)}.frame{backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}.motion-reveal.reveal-pending{translate:0 16px}.footer-actions{gap:14px}.site-footer{flex-wrap:wrap}.hero .frame{animation-duration:.7s}.hero-line{animation-duration:.7s}}
+    @media(max-width:420px){.footer-actions{width:100%;justify-content:space-between}.site-footer{gap:14px}.motion-toggle{font-size:12px}.project,.price-card,.contact{backdrop-filter:none;-webkit-backdrop-filter:none}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}.motion-reveal{opacity:1!important;translate:0 0!important}.frame,.project,.price-card,.button,.sample,.about-mark,.hero-line,.hero-bottom,.hero-kicker,.hero-scroll,.hero-scroll svg,.service-row h3,.tools-strip strong,.about-tools span{transform:none!important}.hero-line{filter:none}.button:before{display:none}body:before{transform:none}html{scroll-behavior:auto}}
+    @media print{body:before,body:after,.reading-progress,.motion-toggle,.nav-indicator{display:none}.motion-reveal{opacity:1!important;translate:0 0!important}.frame,.project,.price-card,.price-card.combined,.contact{background:white;box-shadow:none;backdrop-filter:none;transform:none}.frame:before,.project:before,.price-card:before,.contact:before{display:none}.hero h1{text-shadow:none}.hero h1 em{filter:none}*{animation:none!important;transition:none!important}}
+  </style>
 </head>
 <body id="top">
   <a class="skip" href="#main">Skip to content</a>
@@ -50,7 +95,7 @@
         <div class="window-bar" aria-hidden="true"><span class="window-dots"><i></i><i></i><i></i></span><span>workwithmarlon.online</span><span>+</span></div>
         <div class="hero-content">
           <p class="eyebrow hero-kicker">Your work, with a little more support</p>
-          <h1 id="hero-title">Less busywork.<br>More room to <em>grow.</em></h1>
+          <h1 id="hero-title"><span class="hero-line">Less busywork.</span> <span class="hero-line">More room to <em>grow.</em></span></h1>
           <div class="hero-bottom">
             <div class="hero-actions"><a class="button" href="#contact">Work with me <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a><span class="small-note">Nearly four years of hands-on experience.</span></div>
             <p><strong>Hi, I'm Marlon, a Creative &amp; E-commerce VA.</strong> I help with graphics, social content, newsletters, websites, and online stores—so you have more room for your business.</p>
@@ -198,8 +243,9 @@
         for (const section of sections) if (section.getBoundingClientRect().top <= boundary) current = section;
         if (document.getElementById('contact').getBoundingClientRect().top <= boundary) current = null;
         for (const link of links) {
-          if (current && link.hash === '#' + current.id) link.setAttribute('aria-current','location');
-          else link.removeAttribute('aria-current');
+          if (current && link.hash === '#' + current.id) {
+            if (link.getAttribute('aria-current') !== 'location') link.setAttribute('aria-current','location');
+          } else if (link.hasAttribute('aria-current')) link.removeAttribute('aria-current');
         }
       }
       let pending = false;
@@ -229,6 +275,147 @@
         draft.href = 'mailto:' + email + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
         draft.click();
         document.getElementById('email-status').textContent = 'Your email app should open with a draft. Nothing has been sent yet. If it did not open, use the email address above.';
+      });
+    })();
+  </script>
+
+  <script id="portfolio-motion">
+    (() => {
+      'use strict';
+      const root = document.documentElement;
+      const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+      const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
+      let manuallyPaused = false;
+      try { manuallyPaused = localStorage.getItem('marlon-motion') === 'paused'; } catch {}
+      let paused = reduced.matches || manuallyPaused;
+      let revealObserver = null;
+      const toggle = document.createElement('button');
+      toggle.type = 'button';
+      toggle.className = 'motion-toggle';
+      const footer = document.querySelector('.site-footer');
+      const footerActions = document.createElement('div');
+      footerActions.className = 'footer-actions';
+      footerActions.append(toggle, footer.querySelector('a'));
+      footer.append(footerActions);
+      function setMotion() {
+        paused = reduced.matches || manuallyPaused;
+        root.classList.toggle('motion-paused', paused);
+        toggle.disabled = reduced.matches;
+        toggle.setAttribute('aria-pressed', String(paused));
+        toggle.textContent = reduced.matches ? 'Reduced motion' : paused ? 'Resume motion' : 'Pause motion';
+        toggle.title = reduced.matches ? 'Following your device’s reduced-motion setting' : paused ? 'Enable decorative motion' : 'Pause decorative motion';
+        if (paused) {
+          if (revealObserver) revealObserver.disconnect();
+          document.querySelectorAll('.reveal-pending').forEach(el => {el.classList.remove('reveal-pending');el.classList.add('is-visible');});
+          document.querySelectorAll('.glass-tracking').forEach(el => {
+            el.style.removeProperty('--tilt-x');el.style.removeProperty('--tilt-y');
+            el.style.removeProperty('--light-x');el.style.removeProperty('--light-y');
+          });
+        }
+      }
+      toggle.addEventListener('click', () => {
+        manuallyPaused = !paused;
+        try { localStorage.setItem('marlon-motion', manuallyPaused ? 'paused' : 'full'); } catch {}
+        setMotion();
+      });
+      reduced.addEventListener('change', setMotion);
+      setMotion();
+
+      const progress = document.createElement('div');
+      progress.className = 'reading-progress';
+      progress.setAttribute('aria-hidden','true');
+      document.body.prepend(progress);
+      let scrollFrame = 0;
+      function updateScroll() {
+        scrollFrame = 0;
+        const extent = root.scrollHeight - root.clientHeight;
+        root.style.setProperty('--reading-progress', extent > 0 ? String(Math.min(1, Math.max(0, window.scrollY / extent))) : '0');
+        root.classList.toggle('has-scrolled', window.scrollY > 20);
+      }
+      function scheduleScroll() { if (!scrollFrame) scrollFrame = requestAnimationFrame(updateScroll); }
+      window.addEventListener('scroll', scheduleScroll, {passive:true});
+      window.addEventListener('resize', scheduleScroll);
+      document.querySelectorAll('details').forEach(el=>el.addEventListener('toggle', scheduleScroll));
+      updateScroll();
+
+      const nav = document.querySelector('.main-nav');
+      const navLinks = [...nav.querySelectorAll('a')];
+      const indicator = document.createElement('span');
+      indicator.className = 'nav-indicator';
+      indicator.setAttribute('aria-hidden','true');
+      nav.prepend(indicator);
+      let hoveringNav = false;
+      function moveIndicator(link) {
+        if (!link) return;
+        nav.style.setProperty('--nav-left', link.offsetLeft + 'px');
+        nav.style.setProperty('--nav-width', link.offsetWidth + 'px');
+      }
+      function syncIndicator() {
+        const focused = navLinks.find(link => link === document.activeElement);
+        moveIndicator(focused || nav.querySelector('[aria-current="location"]') || navLinks[0]);
+      }
+      navLinks.forEach(link => {
+        link.addEventListener('pointerenter', event => {if (event.pointerType !== 'touch' && finePointer.matches) {hoveringNav = true;moveIndicator(link);}});
+        link.addEventListener('focus', () => moveIndicator(link));
+        link.addEventListener('click', () => moveIndicator(link));
+      });
+      nav.addEventListener('pointerleave', () => {hoveringNav = false;syncIndicator();});
+      nav.addEventListener('focusout', () => requestAnimationFrame(syncIndicator));
+      new MutationObserver(() => {if (!hoveringNav) syncIndicator();}).observe(nav,{subtree:true,attributes:true,attributeFilter:['aria-current']});
+      if ('ResizeObserver' in window) new ResizeObserver(syncIndicator).observe(nav);
+      window.addEventListener('resize', syncIndicator);
+      syncIndicator();
+      requestAnimationFrame(() => nav.classList.add('nav-enhanced'));
+
+      if (!paused && 'IntersectionObserver' in window) {
+        revealObserver = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.remove('reveal-pending');
+              entry.target.classList.add('is-visible');
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        }, {threshold:0,rootMargin:'0px 0px -24px 0px'});
+        const targets = document.querySelectorAll('.section-top,.section-heading,.service-row,.work-intro,.project,.pricing-intro,.price-card,.plan-inclusions,.working-faq,.about-layout,.process,.contact');
+        targets.forEach(el => {
+          el.classList.add('motion-reveal');
+          if (el.matches('.price-card')) el.style.setProperty('--reveal-delay', ([...el.parentElement.children].indexOf(el) * 70) + 'ms');
+          if (el.getBoundingClientRect().top >= window.innerHeight - 24) {
+            el.classList.add('reveal-pending');
+            revealObserver.observe(el);
+          } else el.classList.add('is-visible');
+        });
+      }
+
+      document.querySelectorAll('.frame,.project,.price-card,.contact').forEach(surface => {
+        surface.classList.add('glass-tracking');
+        let pointerFrame = 0;
+        let lastX = 0;
+        let lastY = 0;
+        surface.addEventListener('pointermove', event => {
+          if (paused || !finePointer.matches || event.pointerType === 'touch') return;
+          lastX = event.clientX;lastY = event.clientY;
+          if (!pointerFrame) pointerFrame = requestAnimationFrame(() => {
+            pointerFrame = 0;
+            if (paused) return;
+            const rect = surface.getBoundingClientRect();
+            const x = Math.min(1, Math.max(0, (lastX - rect.left) / rect.width));
+            const y = Math.min(1, Math.max(0, (lastY - rect.top) / rect.height));
+            surface.style.setProperty('--light-x', (x * 100).toFixed(2) + '%');
+            surface.style.setProperty('--light-y', (y * 100).toFixed(2) + '%');
+            if (surface.matches('.project')) {
+              surface.style.setProperty('--tilt-x', ((.5 - y) * 1.2).toFixed(2) + 'deg');
+              surface.style.setProperty('--tilt-y', ((x - .5) * 1.6).toFixed(2) + 'deg');
+            }
+          });
+        }, {passive:true});
+        surface.addEventListener('pointerleave', () => {
+          if (pointerFrame) cancelAnimationFrame(pointerFrame);
+          pointerFrame = 0;
+          surface.style.setProperty('--tilt-x','0deg');surface.style.setProperty('--tilt-y','0deg');
+          surface.style.setProperty('--light-x','50%');surface.style.setProperty('--light-y','0%');
+        });
       });
     })();
   </script>
